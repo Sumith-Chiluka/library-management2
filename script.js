@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const API_BASE_URL = "https://your-backend-service.onrender.com"; // Set backend URL
     const tableBody = document.querySelector("#issued-books tbody");
     const filterDropdown = document.getElementById("filter");
     const searchInput = document.getElementById("search");
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchIssuedBooks() {
         const token = "your_jwt_token_here"; // Replace with actual token
-        const response = await fetch("http://localhost:5000/api/issue/my", {
+        const response = await fetch(`${API_BASE_URL}/api/issue/my`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
