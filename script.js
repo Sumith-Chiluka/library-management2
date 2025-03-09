@@ -57,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         displayBooks();
     }
+    function logout() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        window.location.href = "login.html";
+    }
+    
 
     filterDropdown.addEventListener("change", displayBooks);
     searchInput.addEventListener("input", displayBooks);
